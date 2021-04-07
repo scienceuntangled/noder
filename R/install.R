@@ -28,7 +28,7 @@ nr_install_node <- function(version = "LTS", bits, force = FALSE) {
         if (!requireNamespace("archive", quietly = TRUE)) {
             msg <- "the 'archive' package is required: install it with\n"
             if (!requireNamespace("remotes", quietly = TRUE)) msg <- paste0(msg, "  install.packages(\"remotes\")\n")
-            stop(paste0(msg, "  remotes", "::", "install_github(\"jimhester/archive\")")) ## silly paste0 here to avoid check warnings
+            stop(paste0(msg, "  remotes::install_github(\"jimhester/archive\")"))
         }
     }
     existing_exe <- nr_node_exe()
