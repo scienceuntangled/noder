@@ -8,6 +8,10 @@
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
+`noder` provides helper functions to install node JS into a
+user-accessible directory (not a system installation), so that system
+`node` calls can then be made from within R.
+
 ## Installation
 
 You can install from [GitHub](https://github.com/scienceuntangled/noder)
