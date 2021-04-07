@@ -1,0 +1,51 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# noder
+
+<!-- badges: start -->
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+## Installation
+
+You can install from [GitHub](https://github.com/scienceuntangled/noder) with:
+
+```{r eval = FALSE}
+## install.packages("remotes") ## if needed
+remotes::install_github("scienceuntangled/noder")
+
+```
+
+## Example usage
+
+Install node. You only need to do this once.
+
+```{r eval = FALSE}
+library(noder)
+nr_install_node()
+```
+
+The node executable should now be found:
+
+```{r}
+nr_node_exe()
+```
+
+You can then call that node executable in whatever way you like. The `nr_exec_*` functions provide trivial wrappers around the `sys::exec_*` functions:
+
+```{r}
+nr_exec_wait("--version")
+```

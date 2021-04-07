@@ -1,0 +1,24 @@
+Package: noder
+Title: NodeJS for R
+Version: 0.0.1
+Authors@R: c(person(given = "Ben", family = "Raymond", role = c("aut", "cre"), email = "ben@untan.gl"),
+             person(given = "Adrien", family = "Ickowicz", role = "aut"))
+Description: Self-contained node JS for R.
+URL: https://github.com/scienceuntangled/noder
+BugReports: https://github.com/scienceuntangled/noder/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Imports:
+    assertthat,
+    fs,
+    rappdirs,
+    sys,
+    utils
+Suggests:
+    archive,
+    remotes,
+    testthat
+Remotes: jimhester/archive
+RoxygenNote: 7.1.1
