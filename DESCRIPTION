@@ -1,6 +1,6 @@
 Package: noder
 Title: NodeJS for R
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(person(given = "Ben", family = "Raymond", role = c("aut", "cre"), email = "ben@untan.gl"),
              person(given = "Adrien", family = "Ickowicz", role = "aut"))
 Description: Self-contained node JS for R.

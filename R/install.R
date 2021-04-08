@@ -142,5 +142,5 @@ get_os <- function() {
 
 get_os2 <- function() {
     os <- get_os()
-    if (os == "osx") "darwin" else os
+    if (os == "osx") "darwin" else if (os == "windows") "win" else os
 }
