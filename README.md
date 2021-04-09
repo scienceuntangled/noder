@@ -35,15 +35,29 @@ The node executable should now be found:
 
 ``` r
 nr_node_exe()
-#> /home/ben/.local/share/noder/node/node-v14.16.1-linux-x64/bin/node
+#>                                                                 node 
+#> "/home/ben/.local/share/noder/node/node-v14.16.1-linux-x64/bin/node"
 ```
 
-You can then call that node executable in whatever way you like. The
-`nr_exec_*` functions provide trivial wrappers around the `sys::exec_*`
-functions:
+You can then call that node executable using `system()` or similar
+commands. The `nr_exec_*` functions provide trivial wrappers around the
+`sys::exec_*` functions, passing the full path to node as the `cmd`
+argument to those functions:
 
 ``` r
+## equivalent to a system call of `node --version`
 nr_exec_wait("--version")
 #> v14.16.1
 #> [1] 0
+```
+
+Alternatively, add `node` to the system path with `nr_add_node_path()`,
+and then subsequent system calls should find `node` or `npm`:
+
+``` r
+nr_add_node_path()
+system2("node", "--version", stdout = TRUE)
+#> [1] "v14.16.1"
+system2("npm", "--version", stdout = TRUE)
+#> [1] "6.14.12"
 ```

@@ -109,7 +109,7 @@ nr_node_exe <- function() {
 nr_add_node_path <- function() {
     if (!nzchar(Sys.which("npm"))) {
         node_dir <- dirname(nr_node_exe())
-        if (!nzchar(node_dir)) {
+        if (nzchar(node_dir)) {
             psep <- if (get_os() == "windows") ";" else ":"
             Sys.setenv(PATH = paste0(node_dir, psep, Sys.getenv("PATH")))
         }
