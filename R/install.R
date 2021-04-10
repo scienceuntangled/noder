@@ -108,6 +108,7 @@ nr_node_exe <- function() {
 #' @export
 nr_add_node_path <- function() {
     if (!nzchar(Sys.which("npm"))) {
+        if (is.null(nr_node_exe())) stop("could not find the node executable")
         node_dir <- dirname(nr_node_exe())
         if (nzchar(node_dir)) {
             psep <- if (get_os() == "windows") ";" else ":"
