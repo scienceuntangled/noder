@@ -55,8 +55,8 @@ nr_install_node <- function(version = "LTS", bits, force = FALSE) {
     ##  https://nodejs.org/dist/v14.16.1/node-v14.16.1-linux-x64.tar.xz
     ##  https://nodejs.org/dist/v14.16.1/node-v14.16.1-darwin-x64.tar.gz
     rgxp <- paste0("https://nodejs\\.org/dist/v[[:digit:]\\.]+/node\\-v[[:digit:]\\.]+\\-", get_os2(), "-", bits, "\\.(zip|tar\\.gz|tar\\.xz)")
-    dl_url <- pg[grep(rgxp, pg)]
-    dl_url <- regmatches(dl_url, regexpr(rgxp, dl_url))
+    dl_url <- pg[grep(rgxp, pg, ignore.case = TRUE)]
+    dl_url <- regmatches(dl_url, regexpr(rgxp, dl_url, ignore.case = TRUE))
     if (length(dl_url) != 1) {
         stop("could not find download url")
     }
