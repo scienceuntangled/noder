@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R build
+status](https://github.com/scienceuntangled/noder/workflows/R-CMD-check/badge.svg)](https://github.com/scienceuntangled/noder/actions)
 <!-- badges: end -->
 
 `noder` provides helper functions to install node JS into a
@@ -24,10 +26,13 @@ remotes::install_github("scienceuntangled/noder")
 
 ## Example usage
 
+``` r
+library(noder)
+```
+
 Install node. You only need to do this once.
 
 ``` r
-library(noder)
 nr_install_node()
 ```
 
@@ -35,8 +40,7 @@ The node executable should now be found:
 
 ``` r
 nr_node_exe()
-#>                                                                 node 
-#> "/home/ben/.local/share/noder/node/node-v14.16.1-linux-x64/bin/node"
+#> /home/ben/.local/share/noder/node/node-v14.16.1-linux-x64/bin/node
 ```
 
 You can then call that node executable using `system()` or similar
