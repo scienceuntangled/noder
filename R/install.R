@@ -24,13 +24,6 @@ nr_install_node <- function(version = "LTS", bits, force = FALSE) {
     }
     assert_that(bits %in% c(32, 64))
     bits <- paste0("x", if (bits == 32) "86" else "64")
-    if (get_os() %in% c("osx", "linux")) {
-        if (!requireNamespace("archive", quietly = TRUE)) {
-            msg <- "the 'archive' package is required: install it with\n"
-            if (!requireNamespace("remotes", quietly = TRUE)) msg <- paste0(msg, "  install.packages(\"remotes\")\n")
-            stop(paste0(msg, "  remotes::install_github(\"jimhester/archive\")"))
-        }
-    }
     existing_exe <- nr_node_exe()
     path <- file.path(noder_app_dir(), "node")
     if (!force) {
